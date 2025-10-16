@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+</head>
+<body>
+    <h2>Transcription</h2>
+    <p>{{ transcript }}</p>
+
+    <h2>Extracted Information</h2>
+    <pre>{{ extracted_info }}</pre>
+<form action="/save" method="post">
+    <input type="hidden" name="data" value='{{ extracted_info|tojson }}'>
+    <button type="submit">💾 Save to CSV</button>
+</form>
+
+</body>
+</html>
